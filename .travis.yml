@@ -24,8 +24,7 @@ before_script:
   - git rm --cached --ignore-unmatch index.html
 
 script:
-  - ./gradlew clean publish -i --continue
-  - ./gradlew -b finalize.gradle finalize -i
+  - ./gradlew clean bootJar -i --continue
 
 after_script:
   - git add .
