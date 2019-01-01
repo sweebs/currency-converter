@@ -45,4 +45,12 @@ public class CurrencyConverterRoute extends RouteBuilder {
             .end();
 
     }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
 }

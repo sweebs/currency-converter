@@ -1,5 +1,7 @@
 package me.sweby.currency.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Value;
 import org.apache.camel.Exchange;
@@ -12,13 +14,44 @@ import java.util.Map;
 
 import static me.sweby.currency.model.ConversionConstants.*;
 
-@Value
+
 public class ConversionResult implements Serializable {
 
+
     private final String fromCurrency;
+
     private final String toCurrency;
+
     private final Double fromAmount;
+
     private final Double toAmount;
+
+    @JsonCreator
+    public ConversionResult(@JsonProperty("fromCurrency") String fromCurrency,
+                            @JsonProperty("toCurrency") String toCurrency,
+                            @JsonProperty("fromAmount") Double fromAmount,
+                            @JsonProperty("toAmount") Double toAmount) {
+        this.fromCurrency = fromCurrency;
+        this.toCurrency = toCurrency;
+        this.fromAmount = fromAmount;
+        this.toAmount = toAmount;
+    }
+
+    public String getFromCurrency() {
+        return fromCurrency;
+    }
+
+    public String getToCurrency() {
+        return toCurrency;
+    }
+
+    public Double getFromAmount() {
+        return fromAmount;
+    }
+
+    public Double getToAmount() {
+        return toAmount;
+    }
 
     public static ConversionResult build(Exchange exchange) throws Exception {
         return new ConversionResult(exchange.getProperty(FROM, String.class),

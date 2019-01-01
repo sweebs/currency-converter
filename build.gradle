@@ -41,4 +41,5 @@ dependencies {
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '1.18'
     testCompile("junit:junit")
+    testCompile("org.apache.camel:camel-test:2.23.0")
 }
