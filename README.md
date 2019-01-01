@@ -1,0 +1,1 @@
+Demo project for SpringBoot 2.0.5, Camel 2.23 and Java 11

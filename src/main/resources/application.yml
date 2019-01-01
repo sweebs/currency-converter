@@ -1,0 +1,15 @@
+rest:
+  title: CurrencyConverterService
+  version: 1.0
+  bindingMode: auto
+  contextPath: currency-converter-service
+  cors: false
+
+target:
+  uri: http4://data.fixer.io/api/latest&bridgeEndpoint=true
+  apiKey: ENC(AszNxBIyd5zOfd0DUq9zXuVWNrDEBwv9OvjP9rCZXto3ZAWhSZNOipVHcNxwKJM7)
+
+
+jasypt:
+  encryptor:
+    password: ${JASYPT_KEY}
